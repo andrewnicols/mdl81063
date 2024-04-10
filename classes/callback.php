@@ -27,14 +27,14 @@ class callback {
     public static function example_serverside_hook(
         \tool_usertours\hook\before_serverside_filter_fetch $hook
     ): void {
-        $hook->add_filter_classname(userid::class);
+        $hook->add_filter_by_classname(userid::class);
         $hook->remove_filter_by_classname(\tool_usertours\local\filter\accessdate::class);
     }
 
     public static function example_clientside_hook(
         \tool_usertours\hook\before_clientside_filter_fetch $hook
     ): void {
-        $hook->add_filter_classname(bodyclass::class);
+        $hook->add_filter_by_classname(bodyclass::class);
         $hook->remove_filter_by_classname(\tool_usertours\local\clientside_filter\cssselector::class);
     }
 }
